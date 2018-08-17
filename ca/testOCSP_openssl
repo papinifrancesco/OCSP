@@ -1,0 +1,33 @@
+# root CA cert test
+openssl ocsp -CAfile rootCA.cert.pem \
+      -url http://ocsp.example.com:81 -sha256 -resp_text \
+      -issuer rootCA.cert.pem \
+      -cert rootCA.cert.pem
+# OK
+
+
+# intermediate CA cert test 
+openssl ocsp -CAfile rootCA.cert.pem \
+      -url http://ocsp.example.com:81 -sha256 -resp_text \
+      -issuer rootCA.cert.pem \
+      -cert intermediateCA.cert.pem
+# OK
+
+
+# web server cert test
+openssl ocsp -CAfile ca-chain.cert.pem \
+        -url http://ocsp.example.com:80 -sha256 -resp_text \
+        -issuer ca-chain.cert.pem \
+        -cert www.example.com.cert.pem
+#OK
+
+
+# client cert test
+openssl ocsp -CAfile ca-chain.cert.pem \
+      -url http://ocsp.example.com:80 -resp_text \
+      -issuer intermediateCA.cert.pem \
+      -cert client.cert.pem
+# OK
+
+
+
