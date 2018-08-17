@@ -58,7 +58,9 @@ Remember to properly exclude *.example.com ; 192.168.122.0/24 from the proxy.
 
 References:
 https://wiki.mozilla.org/Security/Server_Side_TLS
+
 https://blog.cloudflare.com/high-reliability-ocsp-stapling/
+
 https://www.feistyduck.com/books/openssl-cookbook/
 
 Information is accurate at the time of writing: 17/08/2018
