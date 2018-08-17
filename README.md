@@ -22,7 +22,7 @@ Very up to date distros (but some OCSP features ares still missing):
 
 
 On the CAs VM
-    extract the archive so you'll have the "/root/ca" path.
+    copy the ca folder so you'll have the "/root/ca" path.
     configure the firewall to allow 80/tcp and 81/tcp
       firewall-cmd --zone=public --add-port=80/tcp --permanent
       firewall-cmd --zone=public --add-port=81/tcp --permanent
