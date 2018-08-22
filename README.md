@@ -11,7 +11,7 @@ Conclusion
   Additional tests will be done when TLSv1.3 will be widespread: client AND server side (even not being the main actor here, I hope vendors will indirectly improve on OCSP as well to be TLSv1.3 compliant).
 
 
-My lab setup, a reviewed version of on:
+My lab setup, a reviewed version of:
 https://jamielinux.com/docs/openssl-certificate-authority/
 
 
