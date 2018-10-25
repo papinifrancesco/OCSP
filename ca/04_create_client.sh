@@ -32,7 +32,7 @@ sleep 1
 chmod 444 intermediate/certs/$request.cert.pem
 
 
-openssl pkcs12 -export -inkey /root/ca/intermediate/private/$request.key.pem -in /root/ca/intermediate/certs/$request.cert.pem -out /root/ca/$request.p12
+openssl pkcs12 -export -inkey /root/ca/intermediate/private/$request.key.pem -in /root/ca/intermediate/certs/$request.cert.pem -certfile /root/ca/intermediate/certs/ca-chain.cert.pem -out /root/ca/$request.p12
 
 
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-request=www.example.com
+request=alfresco6.tst.lcl
 
 cd /root/ca
 # generate the private key - no password
@@ -14,15 +14,15 @@ sleep 1
 chmod 400 intermediate/private/$request.key.pem
 
 # generate the server certificate signing request
-openssl req -config intermediate/IL_openssl.cnf \
+openssl req -config intermediate/IL_ALFRESCO_SOLR_openssl.cnf \
       -key intermediate/private/$request.key.pem \
       -new -sha256 -out intermediate/csr/$request.csr.pem
 
 sleep 1
 
 # generate the server certificate
-openssl ca -config intermediate/IL_openssl.cnf \
-      -extensions server_cert -days 375 -notext -md sha256 \
+openssl ca -config intermediate/IL_ALFRESCO_SOLR_openssl.cnf \
+      -extensions alfresco_cert -days 375 -notext -md sha256 \
       -in intermediate/csr/$request.csr.pem \
       -out intermediate/certs/$request.cert.pem \
       -batch
